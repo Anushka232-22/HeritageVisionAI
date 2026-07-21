@@ -1,0 +1,14 @@
+# Dataset
+data/
+
+# Models
+models/
+*.pth
+*.pt
+
+# Zip files
+*.zip
+
+# Python
+__pycache__/
+*.pyc
