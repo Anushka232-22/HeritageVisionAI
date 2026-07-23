@@ -1,64 +1,34 @@
 import json
-from pathlib import Path
+import os
 
 
-def generate_report(
-        image_name,
-        metrics,
-        severity_score,
-        risk_level,
-        recommendation):
+def generate_report(result, save_dir="outputs/reports"):
+
+    os.makedirs(save_dir, exist_ok=True)
 
     report = {
 
-        "image": image_name,
+        "image": result["image_name"],
 
-        "crack_length":
-            metrics["crack_length"],
+        "num_cracks": result["num_cracks"],
 
-        "crack_area":
-            metrics["crack_area"],
+        "severity": result["severity"],
 
-        "crack_density":
-            metrics["crack_density"],
-
-        "severity_score":
-            severity_score,
-
-        "risk_level":
-            risk_level,
-
-        "recommendation":
-            recommendation
+        "cracks": result["cracks"]
 
     }
 
-    output_dir = Path(
-        "outputs/reports"
+    filename = os.path.join(
+
+        save_dir,
+
+        result["image_name"].split(".")[0] + ".json"
+
     )
 
-    output_dir.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    with open(filename, "w") as f:
+        json.dump(report, f, indent=4)
 
-    output_file = output_dir / (
-        Path(image_name).stem + ".json"
-    )
+    print(f"Report saved: {filename}")
 
-    with open(
-        output_file,
-        "w"
-    ) as f:
-
-        json.dump(
-            report,
-            f,
-            indent=4
-        )
-
-    print(
-        f"Report saved: {output_file}"
-    )
-
-    return report
+    return str(filename)

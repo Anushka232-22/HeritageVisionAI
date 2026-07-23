@@ -51,3 +51,51 @@ def recommendation(level):
     }
 
     return recommendations[level]
+
+
+# -------------------------------------------------------
+# Main function used by the pipeline
+# -------------------------------------------------------
+
+def calculate_severity(pipeline_result):
+
+    total_length = 0
+    total_area = 0
+    total_density = 0
+
+    for crack in pipeline_result["cracks"]:
+
+        metrics = crack["metrics"]
+
+        total_length += metrics["crack_length"]
+        total_area += metrics["crack_area"]
+        total_density += metrics["crack_density"]
+
+    if pipeline_result["num_cracks"] > 0:
+        avg_density = total_density / pipeline_result["num_cracks"]
+    else:
+        avg_density = 0
+
+    score = compute_severity(
+        total_length,
+        total_area,
+        avg_density
+    )
+
+    level = risk_level(score)
+
+    return {
+
+        "crack_length": round(total_length, 2),
+
+        "crack_area": round(total_area, 2),
+
+        "crack_density": round(avg_density, 4),
+
+        "severity_score": score,
+
+        "risk_level": level,
+
+        "recommendation": recommendation(level)
+
+    }

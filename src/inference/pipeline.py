@@ -2,7 +2,10 @@ import os
 
 from src.inference.detector import CrackDetector
 from src.inference.classifier import DamageClassifier
+
 from src.severity.crack_metrics import extract_crack_metrics
+from src.severity.severity_score import calculate_severity
+from src.severity.report_generator import generate_report
 
 
 class HeritagePipeline:
@@ -14,33 +17,33 @@ class HeritagePipeline:
 
     def analyze(self, image_path):
 
+        # -----------------------------
+        # Crack Detection
+        # -----------------------------
+
         detection_result = self.detector.detect(image_path)
 
-        final_result = {
+        pipeline_result = {
             "image_name": detection_result["image_name"],
             "num_cracks": detection_result["num_cracks"],
             "cracks": []
         }
 
+        # -----------------------------
+        # Process every detected crack
+        # -----------------------------
+
         for crack in detection_result["detections"]:
 
             crop_path = crack["crop_path"]
 
-            # -------------------------
             # Damage Classification
-            # -------------------------
 
             classification = self.classifier.classify(crop_path)
 
-            # -------------------------
             # Crack Metrics
-            # -------------------------
 
             metrics = extract_crack_metrics(crop_path)
-
-            # -------------------------
-            # Final Crack Information
-            # -------------------------
 
             crack_info = {
 
@@ -56,6 +59,19 @@ class HeritagePipeline:
 
             }
 
-            final_result["cracks"].append(crack_info)
+            pipeline_result["cracks"].append(crack_info)
 
-        return final_result
+        # -----------------------------
+        # Severity Analysis
+        # -----------------------------
+
+        severity = calculate_severity(pipeline_result)
+
+        pipeline_result["severity"] = severity
+
+
+        # -----------------------------
+        # Return detailed result
+        # -----------------------------
+
+        return pipeline_result
