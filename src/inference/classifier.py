@@ -8,20 +8,26 @@ from PIL import Image
 
 class DamageClassifier:
 
-    def __init__(self):
+    def __init__(self, model_path="models/classifier/best_model_v2.pth",
+                 classes_path="models/classifier/classes.json"):
 
         self.device = torch.device(
             "cuda" if torch.cuda.is_available() else "cpu"
         )
 
+        # Load class list FIRST so num_classes always matches the checkpoint,
+        # instead of hardcoding a number that can drift out of sync again.
+        with open(classes_path) as f:
+            self.classes = json.load(f)
+
         self.model = timm.create_model(
             "efficientnet_b0",
             pretrained=False,
-            num_classes=7
+            num_classes=len(self.classes)
         )
 
         state_dict = torch.load(
-            "models/classifier/best_model_v2.pth",
+            model_path,
             map_location=self.device
         )
 
@@ -29,9 +35,6 @@ class DamageClassifier:
 
         self.model.to(self.device)
         self.model.eval()
-
-        with open("models/classifier/classes.json") as f:
-            self.classes = json.load(f)
 
         self.transform = transforms.Compose([
             transforms.Resize((224, 224)),

@@ -1,0 +1,30 @@
+{
+    "image": "crack1.jpeg",
+    "num_cracks": 1,
+    "severity": {
+        "crack_length": 7868.17,
+        "crack_area": 29082.5,
+        "crack_density": 0.0856,
+        "severity_score": 57.48,
+        "risk_level": "HIGH",
+        "recommendation": "Detailed structural assessment recommended"
+    },
+    "cracks": [
+        {
+            "bbox": [
+                0,
+                0,
+                591,
+                594
+            ],
+            "detection_confidence": 0.8163,
+            "damage_type": "Major Crack",
+            "damage_confidence": 0.7494,
+            "metrics": {
+                "crack_length": 7868.17,
+                "crack_area": 29082.5,
+                "crack_density": 0.0856
+            }
+        }
+    ]
+}

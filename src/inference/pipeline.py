@@ -10,6 +10,8 @@ from src.severity.report_generator import generate_report
 
 class HeritagePipeline:
 
+    CONFIDENCE_THRESHOLD = 0.6  # below this, classification is marked "Uncertain"
+
     def __init__(self):
 
         self.detector = CrackDetector()
@@ -41,6 +43,20 @@ class HeritagePipeline:
 
             classification = self.classifier.classify(crop_path)
 
+            # Apply confidence threshold — don't trust low-confidence class calls
+
+            if classification["confidence"] < self.CONFIDENCE_THRESHOLD:
+                damage_type = "Uncertain"
+            else:
+                damage_type = classification["class"]
+
+            # Skip drawing/reporting boxes the classifier says are healthy surface,
+            # even if confidence is high — these are false-positive detector boxes,
+            # not real damage, and shouldn't appear in the report at all.
+
+            if damage_type in ("Normal", "Healthy_Surface"):
+                continue
+
             # Crack Metrics
 
             metrics = extract_crack_metrics(crop_path)
@@ -51,7 +67,7 @@ class HeritagePipeline:
 
                 "detection_confidence": crack["confidence"],
 
-                "damage_type": classification["class"],
+                "damage_type": damage_type,
 
                 "damage_confidence": classification["confidence"],
 
@@ -60,6 +76,12 @@ class HeritagePipeline:
             }
 
             pipeline_result["cracks"].append(crack_info)
+
+        # -----------------------------
+        # Update crack count to reflect filtered results
+        # -----------------------------
+
+        pipeline_result["num_cracks"] = len(pipeline_result["cracks"])
 
         # -----------------------------
         # Severity Analysis
