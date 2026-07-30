@@ -1,0 +1,13 @@
+{
+    "image": "Algae (9).jpg",
+    "num_cracks": 0,
+    "severity": {
+        "crack_length": 0,
+        "crack_area": 0,
+        "crack_density": 0,
+        "severity_score": 0.0,
+        "risk_level": "LOW",
+        "recommendation": "Monitor annually"
+    },
+    "cracks": []
+}

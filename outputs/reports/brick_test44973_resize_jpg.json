@@ -1,93 +1,45 @@
 {
     "image": "brick_test44973_resize_jpg.rf.2bbe334a5b14048d168aee3cba6d1c72.jpg",
-    "num_cracks": 5,
+    "num_cracks": 2,
     "severity": {
-        "crack_length": 4184.99,
-        "crack_area": 9657.0,
-        "crack_density": 0.286,
-        "severity_score": 51.14,
-        "risk_level": "HIGH",
-        "recommendation": "Detailed structural assessment recommended"
+        "crack_length": 1717.49,
+        "crack_area": 5589.0,
+        "crack_density": 0.2838,
+        "severity_score": 38.6,
+        "risk_level": "MODERATE",
+        "recommendation": "Schedule inspection within 6 months"
     },
     "cracks": [
         {
             "bbox": [
-                125,
-                0,
-                154,
-                277
-            ],
-            "detection_confidence": 0.5874,
-            "damage_type": "Peeling",
-            "damage_confidence": 0.4534,
-            "metrics": {
-                "crack_length": 752.96,
-                "crack_area": 1848.0,
-                "crack_density": 0.2678
-            }
-        },
-        {
-            "bbox": [
-                176,
-                275,
-                397,
-                311
-            ],
-            "detection_confidence": 0.5622,
-            "damage_type": "Stain",
-            "damage_confidence": 0.986,
-            "metrics": {
-                "crack_length": 1112.19,
-                "crack_area": 1392.5,
-                "crack_density": 0.2477
-            }
-        },
-        {
-            "bbox": [
-                127,
-                73,
-                155,
-                275
-            ],
-            "detection_confidence": 0.5595,
-            "damage_type": "Algae",
-            "damage_confidence": 0.515,
-            "metrics": {
-                "crack_length": 500.42,
-                "crack_area": 800.0,
-                "crack_density": 0.1848
-            }
-        },
-        {
-            "bbox": [
-                9,
-                221,
-                79,
+                13,
+                218,
+                83,
                 399
             ],
-            "detection_confidence": 0.533,
+            "detection_confidence": 0.6829,
             "damage_type": "Spalling",
-            "damage_confidence": 0.9169,
+            "damage_confidence": 0.975,
             "metrics": {
-                "crack_length": 934.65,
-                "crack_area": 3307.5,
-                "crack_density": 0.2981
+                "crack_length": 946.7,
+                "crack_area": 3731.0,
+                "crack_density": 0.3267
             }
         },
         {
             "bbox": [
-                145,
-                34,
-                399,
-                59
+                125,
+                0,
+                157,
+                282
             ],
-            "detection_confidence": 0.5231,
+            "detection_confidence": 0.6268,
             "damage_type": "Stain",
-            "damage_confidence": 0.755,
+            "damage_confidence": 0.6811,
             "metrics": {
-                "crack_length": 884.77,
-                "crack_area": 2309.0,
-                "crack_density": 0.4318
+                "crack_length": 770.79,
+                "crack_area": 1858.0,
+                "crack_density": 0.2409
             }
         }
     ]
