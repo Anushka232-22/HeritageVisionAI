@@ -1,0 +1,46 @@
+{
+    "image": "brick_test225831_resize_jpg.rf.baf46dcbc058dde6a03460f366cfd52d.jpg",
+    "num_cracks": 2,
+    "severity": {
+        "crack_length": 2124.78,
+        "crack_area": 5352.5,
+        "crack_density": 0.4582,
+        "severity_score": 41.71,
+        "risk_level": "MODERATE",
+        "recommendation": "Schedule inspection within 6 months"
+    },
+    "cracks": [
+        {
+            "bbox": [
+                60,
+                0,
+                78,
+                100
+            ],
+            "detection_confidence": 0.5754,
+            "damage_type": "Algae",
+            "damage_confidence": 0.774,
+            "metrics": {
+                "crack_length": 306.48,
+                "crack_area": 652.0,
+                "crack_density": 0.4456
+            }
+        },
+        {
+            "bbox": [
+                179,
+                120,
+                223,
+                377
+            ],
+            "detection_confidence": 0.4653,
+            "damage_type": "Stain",
+            "damage_confidence": 0.9935,
+            "metrics": {
+                "crack_length": 1818.3,
+                "crack_area": 4700.5,
+                "crack_density": 0.4707
+            }
+        }
+    ]
+}

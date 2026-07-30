@@ -1,0 +1,62 @@
+{
+    "image": "concrete_1334_jpg.rf.55ccefdc0969221760e71b0c3fab318d.jpg",
+    "num_cracks": 3,
+    "severity": {
+        "crack_length": 15240.14,
+        "crack_area": 65657.5,
+        "crack_density": 0.204,
+        "severity_score": 90.4,
+        "risk_level": "CRITICAL",
+        "recommendation": "Immediate restoration intervention required"
+    },
+    "cracks": [
+        {
+            "bbox": [
+                4,
+                23,
+                596,
+                546
+            ],
+            "detection_confidence": 0.6451,
+            "damage_type": "Minor Crack",
+            "damage_confidence": 0.9972,
+            "metrics": {
+                "crack_length": 6777.65,
+                "crack_area": 26502.0,
+                "crack_density": 0.0952
+            }
+        },
+        {
+            "bbox": [
+                216,
+                0,
+                640,
+                640
+            ],
+            "detection_confidence": 0.5548,
+            "damage_type": "Minor Crack",
+            "damage_confidence": 0.9972,
+            "metrics": {
+                "crack_length": 7154.21,
+                "crack_area": 29049.5,
+                "crack_density": 0.117
+            }
+        },
+        {
+            "bbox": [
+                527,
+                416,
+                640,
+                638
+            ],
+            "detection_confidence": 0.3975,
+            "damage_type": "Algae",
+            "damage_confidence": 0.941,
+            "metrics": {
+                "crack_length": 1308.28,
+                "crack_area": 10106.0,
+                "crack_density": 0.3999
+            }
+        }
+    ]
+}

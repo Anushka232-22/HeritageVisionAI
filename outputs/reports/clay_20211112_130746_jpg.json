@@ -1,0 +1,78 @@
+{
+    "image": "clay_20211112_130746_jpg.rf.02bcc283d501b4dd5449eac46d1a3977.jpg",
+    "num_cracks": 4,
+    "severity": {
+        "crack_length": 13557.66,
+        "crack_area": 121237.0,
+        "crack_density": 0.4012,
+        "severity_score": 100.0,
+        "risk_level": "CRITICAL",
+        "recommendation": "Immediate restoration intervention required"
+    },
+    "cracks": [
+        {
+            "bbox": [
+                0,
+                0,
+                612,
+                228
+            ],
+            "detection_confidence": 0.6854,
+            "damage_type": "Stain",
+            "damage_confidence": 0.8097,
+            "metrics": {
+                "crack_length": 5922.59,
+                "crack_area": 48437.0,
+                "crack_density": 0.3483
+            }
+        },
+        {
+            "bbox": [
+                0,
+                403,
+                637,
+                534
+            ],
+            "detection_confidence": 0.6567,
+            "damage_type": "Stain",
+            "damage_confidence": 0.6079,
+            "metrics": {
+                "crack_length": 4076.71,
+                "crack_area": 42512.5,
+                "crack_density": 0.4995
+            }
+        },
+        {
+            "bbox": [
+                360,
+                115,
+                639,
+                187
+            ],
+            "detection_confidence": 0.6424,
+            "damage_type": "Stain",
+            "damage_confidence": 0.7809,
+            "metrics": {
+                "crack_length": 980.62,
+                "crack_area": 1719.5,
+                "crack_density": 0.1091
+            }
+        },
+        {
+            "bbox": [
+                0,
+                476,
+                640,
+                546
+            ],
+            "detection_confidence": 0.5727,
+            "damage_type": "Stain",
+            "damage_confidence": 0.9982,
+            "metrics": {
+                "crack_length": 2577.74,
+                "crack_area": 28568.0,
+                "crack_density": 0.6479
+            }
+        }
+    ]
+}

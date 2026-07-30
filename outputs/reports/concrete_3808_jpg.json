@@ -1,0 +1,30 @@
+{
+    "image": "concrete_3808_jpg.rf.7aaea53423932b135aee454e3672e4a2.jpg",
+    "num_cracks": 1,
+    "severity": {
+        "crack_length": 1648.11,
+        "crack_area": 22522.0,
+        "crack_density": 0.2662,
+        "severity_score": 46.73,
+        "risk_level": "MODERATE",
+        "recommendation": "Schedule inspection within 6 months"
+    },
+    "cracks": [
+        {
+            "bbox": [
+                1,
+                0,
+                638,
+                131
+            ],
+            "detection_confidence": 0.8245,
+            "damage_type": "Stain",
+            "damage_confidence": 0.9732,
+            "metrics": {
+                "crack_length": 1648.11,
+                "crack_area": 22522.0,
+                "crack_density": 0.2662
+            }
+        }
+    ]
+}

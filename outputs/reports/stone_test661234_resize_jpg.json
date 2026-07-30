@@ -1,0 +1,46 @@
+{
+    "image": "stone_test661234_resize_jpg.rf.155a14574870b864e14a45ef3540e48d.jpg",
+    "num_cracks": 2,
+    "severity": {
+        "crack_length": 7261.72,
+        "crack_area": 16866.5,
+        "crack_density": 0.1599,
+        "severity_score": 55.16,
+        "risk_level": "HIGH",
+        "recommendation": "Detailed structural assessment recommended"
+    },
+    "cracks": [
+        {
+            "bbox": [
+                0,
+                79,
+                640,
+                204
+            ],
+            "detection_confidence": 0.6915,
+            "damage_type": "Spalling",
+            "damage_confidence": 0.8457,
+            "metrics": {
+                "crack_length": 3961.06,
+                "crack_area": 8757.0,
+                "crack_density": 0.1337
+            }
+        },
+        {
+            "bbox": [
+                0,
+                123,
+                640,
+                204
+            ],
+            "detection_confidence": 0.4092,
+            "damage_type": "Spalling",
+            "damage_confidence": 0.5454,
+            "metrics": {
+                "crack_length": 3300.66,
+                "crack_area": 8109.5,
+                "crack_density": 0.1861
+            }
+        }
+    ]
+}
